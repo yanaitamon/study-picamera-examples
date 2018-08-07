@@ -37,7 +37,7 @@ class FaceDetector(object):
         faces = self.face_cascade.detectMultiScale(gray, 1.3, 3)
 
         # 文字列を作成する
-        iSize = faces.size
+        iSize = len(faces)
         # iRow = frame.shape[0]
         # iCol = frame.shape[1]
         font = cv2.FONT_HERSHEY_SIMPLEX
