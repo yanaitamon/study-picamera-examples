@@ -38,8 +38,8 @@ class FaceDetector(object):
 
         # 文字列を作成する
         iSize = faces.size
-        iRow = frame.shape[0]
-        iCol = frame.shape[1]
+        # iRow = frame.shape[0]
+        # iCol = frame.shape[1]
         font = cv2.FONT_HERSHEY_SIMPLEX
 
         # 取得した座標情報を元に、cv2.rectangleを使ってframe上に
