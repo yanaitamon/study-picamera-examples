@@ -47,8 +47,8 @@ class FaceDetector(object):
         # 顔の位置を描画する
         for (x,y,w,h) in faces:
             cv2.rectangle(frame,(x,y),(x+w,y+h),(128,128,0),2)
-            face = src[y: y + h, x: x + w]
-            face_gray = src_gray[y: y + h, x: x + w]
+            face = frame[y: y + h, x: x + w]
+            face_gray = gray[y: y + h, x: x + w]
             eyes = eye_cascade.detectMultiScale(face_gray)
             for (ex, ey, ew, eh) in eyes:
                 cv2.rectangle(face, (ex, ey), (ex + ew, ey + eh), (0, 255, 0), 2)
