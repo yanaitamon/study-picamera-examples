@@ -37,14 +37,17 @@ class FaceDetector(object):
         faces = self.face_cascade.detectMultiScale(gray, 1.3, 3)
 
         # 文字列を作成する
-        # iNum = faces.shape
+        iSize = faces.size
+        iRow = frame.shape[0]
+        iCol = frame.shape[1]
         font = cv2.FONT_HERSHEY_SIMPLEX
 
         # 取得した座標情報を元に、cv2.rectangleを使ってframe上に
         # 顔の位置を描画する
         for (x,y,w,h) in faces:
             cv2.rectangle(frame,(x,y),(x+w,y+h),(128,128,0),2)
-        
-        cv2.putText(frame,'33',(10,100), font, 4,(128,0,255),3,cv2.LINE_AA)
+
+        # 文字列を書く
+        cv2.putText(frame,str(iSize),(10,100), font, 4,(128,0,255),3,cv2.LINE_AA)
         # frameを戻り値として返す
         return frame
